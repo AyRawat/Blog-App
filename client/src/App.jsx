@@ -3,6 +3,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import PrivateRoute from "./components/PrivateRoute";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route element={<PrivateRoute />}>
+             {/* <Route path='/dashboard' element={<Dashboard />} /> */}
+              <Route path='/create-post' element={<CreatePost />} />
+        </Route>
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
